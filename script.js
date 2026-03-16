@@ -1,6 +1,7 @@
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
 
-if (!reduceMotion) {
+if (!prefersReducedMotion && !isSmallScreen) {
   const floatingPanels = document.querySelectorAll('.parallax-block');
   const imagePanels = document.querySelectorAll('.parallax-bg');
 
