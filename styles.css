@@ -1,0 +1,389 @@
+:root {
+  --bg: #f6f2ea;
+  --ink: #17172d;
+  --sea: #33b8ff;
+  --sun: #ff5b2e;
+  --foam: #f8fbff;
+  --lime: #d8ff43;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 4vw;
+  background: #ffffffde;
+  border-bottom: 3px solid var(--ink);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "Anton", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.strap {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  text-align: center;
+}
+
+main {
+  width: min(1200px, 94vw);
+  margin: 1rem auto 0;
+}
+
+.panel {
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  padding: 1.25rem;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-areas:
+    "title image"
+    "title cta";
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  grid-area: title;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-image {
+  grid-area: image;
+  min-height: 36vh;
+  background: linear-gradient(140deg, rgba(23, 23, 45, 0.35), rgba(23, 23, 45, 0.05)),
+    url("https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=2200&q=80") center / cover;
+}
+
+.hero-cta {
+  grid-area: cta;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0.8rem;
+}
+
+.dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.light {
+  background: #fff;
+}
+
+.electric {
+  background: linear-gradient(140deg, var(--sea), #89e0ff);
+}
+
+.accent {
+  background: linear-gradient(155deg, #ffe0b3, #ffd8ef);
+}
+
+.meta {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.4rem 0 0.55rem;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.pill {
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--lime);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.story-layout,
+.plans-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.story-layout ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  line-height: 1.8;
+}
+
+.flow {
+  margin-bottom: 1rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.steps article {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 16px;
+  padding: 0.75rem;
+}
+
+.steps strong {
+  font-size: 1.5rem;
+  color: var(--lime);
+}
+
+.steps p {
+  margin: 0.35rem 0 0;
+}
+
+.menu-board {
+  background: var(--foam);
+  margin-bottom: 1rem;
+}
+
+.menu-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.menu-columns article {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 0.8rem;
+}
+
+.menu-columns ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.ribbon {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  background: var(--sun);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.ribbon p {
+  margin: 0;
+  padding: 0.4rem 0;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  animation: marquee 18s linear infinite;
+}
+
+.book-panel {
+  text-align: center;
+  background: linear-gradient(145deg, #ffffff, #edfff7);
+}
+
+.book-panel .pill {
+  margin-top: 0.4rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.2rem 1rem 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 980px) {
+  main {
+    width: min(100%, 94vw);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "cta";
+  }
+
+  .hero-title {
+    min-height: auto;
+  }
+
+  .story-layout,
+  .plans-layout,
+  .menu-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "brand strap book";
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand book"
+      "strap strap";
+    gap: 0.35rem 0.7rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .brand {
+    grid-area: brand;
+    font-size: 1.7rem;
+  }
+
+  .strap {
+    grid-area: strap;
+    text-align: left;
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    opacity: 0.85;
+  }
+
+  .topbar > .pill {
+    grid-area: book;
+    padding: 0.4rem 0.78rem;
+    font-size: 0.78rem;
+    border-width: 2px;
+  }
+
+  main {
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 0 0.65rem;
+  }
+
+  .panel {
+    border-width: 2px;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .hero-image {
+    min-height: 28vh;
+    background-position: center;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 12vw, 3.2rem);
+    line-height: 0.96;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 9vw, 2.1rem);
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 6.8vw, 1.6rem);
+  }
+
+  .meta {
+    font-size: 0.67rem;
+    letter-spacing: 0.13em;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .ribbon p {
+    font-size: 1.08rem;
+    padding: 0.35rem 0;
+  }
+
+  .book-panel .pill {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    padding: 1rem 0.7rem 1.4rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    line-height: 1.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon p {
+    animation: none;
+  }
+}
