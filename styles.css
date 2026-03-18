@@ -34,18 +34,14 @@ body {
 
 .brand-wordmark {
   text-decoration: none;
-  color: var(--navy);
-  font-family: "Pacifico", cursive;
-  font-size: clamp(1.4rem, 2.8vw, 2rem);
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
-.brand-wordmark span {
-  font-family: "Anton", sans-serif;
-  font-size: 0.75em;
-  letter-spacing: 0.06em;
-  margin-left: 0.25rem;
-  color: var(--orange);
+.brand-wordmark img {
+  height: clamp(2rem, 3.2vw, 2.7rem);
+  width: auto;
+  display: block;
 }
 
 .strap {
@@ -66,7 +62,7 @@ main {
   border: 3px solid var(--navy);
   border-radius: 24px;
   padding: 1.2rem;
-  box-shadow: 7px 7px 0 rgba(31, 47, 93, 0.5);
+  box-shadow: 4px 4px 0 rgba(31, 47, 93, 0.35);
 }
 
 .hero-grid {
@@ -162,31 +158,25 @@ h3 {
 .logo-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 0.65rem;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.75rem;
 }
 
-.logo-chip {
-  border: 2px solid #f7f0dd;
+.logo-horizontal {
+  width: min(100%, 320px);
+  height: auto;
+  border: 2px solid rgba(247, 240, 221, 0.55);
+  border-radius: 14px;
+  background: rgba(247, 240, 221, 0.05);
+}
+
+.logo-round {
+  width: 82px;
+  height: 82px;
   border-radius: 999px;
-  padding: 0.3rem 0.8rem;
-  color: #f7f0dd;
-}
-
-.logo-chip.script {
-  font-family: "Pacifico", cursive;
-  font-size: 1.05rem;
-}
-
-.logo-chip.round {
-  border-radius: 999px;
-  width: 2.4rem;
-  height: 2.4rem;
-  padding: 0;
-  display: grid;
-  place-items: center;
-  font-family: "Anton", sans-serif;
-  letter-spacing: 0.06em;
+  border: 2px solid rgba(247, 240, 221, 0.55);
+  background: rgba(247, 240, 221, 0.05);
 }
 
 .story-layout,
@@ -340,6 +330,20 @@ footer {
     letter-spacing: 0.14em;
   }
 
+
+  .brand-wordmark img {
+    height: 2rem;
+  }
+
+  .logo-horizontal {
+    width: min(100%, 240px);
+  }
+
+  .logo-round {
+    width: 62px;
+    height: 62px;
+  }
+
   .topbar .pill {
     justify-self: center;
     border-width: 2px;
@@ -357,7 +361,7 @@ footer {
     border-width: 2px;
     border-radius: 16px;
     padding: 1rem;
-    box-shadow: 4px 4px 0 rgba(31, 47, 93, 0.45);
+    box-shadow: 2px 2px 0 rgba(31, 47, 93, 0.3);
   }
 
   .hero-image {
