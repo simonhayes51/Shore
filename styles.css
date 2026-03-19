@@ -1,0 +1,275 @@
+:root {
+  --cream: #f5efe2;
+  --navy: #1f2f5d;
+  --orange: #d7823b;
+  --orange-dark: #b46829;
+  --white: #fffdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--cream);
+  color: #1a1f2f;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 0.65rem 3vw;
+  background: rgba(245, 239, 226, 0.95);
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-link img {
+  height: 44px;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--orange);
+  border: 2px solid var(--navy);
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.btn:hover {
+  background: var(--orange-dark);
+}
+
+.btn-small {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.88rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+main {
+  width: min(1180px, 94vw);
+  margin: 1.2rem auto;
+}
+
+.hero {
+  background: linear-gradient(115deg, rgba(31, 47, 93, 0.93), rgba(31, 47, 93, 0.72)),
+    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=80") center / cover;
+  border: 2px solid var(--navy);
+  border-radius: 22px;
+  padding: 2rem;
+  color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 1rem;
+}
+
+.hero-overlay {
+  max-width: 700px;
+}
+
+.kicker,
+.label {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Anton, sans-serif;
+  line-height: 0.95;
+  margin: 0.5rem 0 0.75rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5.2rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.hero-badge {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.intro-grid,
+.booking-models,
+.menu,
+.book {
+  margin-top: 1rem;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+}
+
+.intro-grid article,
+.model,
+.menu,
+.book {
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-radius: 20px;
+  padding: 1.15rem;
+}
+
+.intro-grid ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.booking-models {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 1rem;
+}
+
+.model {
+  background: linear-gradient(145deg, #fffdf8, #f4ebdc);
+}
+
+.model.tall {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.model.tall ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.section-head {
+  margin-bottom: 0.8rem;
+}
+
+.menu {
+  background: linear-gradient(145deg, #fffdf8, #efe3cf);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.menu-grid article {
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  padding: 0.9rem;
+  background: #fff;
+}
+
+.book {
+  text-align: center;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.book .btn {
+  margin-top: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0.8rem 1.8rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-badge {
+    width: 110px;
+    height: 110px;
+  }
+
+  .intro-grid,
+  .booking-models,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logo-link img {
+    height: 38px;
+  }
+
+  nav {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .btn,
+  .btn-small {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 1.25rem;
+  }
+}
